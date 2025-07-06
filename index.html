@@ -1,63 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhows Specialty Coffee Menu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Dhows Coffee - مراكب القهوة</title>
     <style>
         :root {
-            --dark-blue: #0a1a2f;
-            --navy: #122a4a;
-            --gold: #c9a66b;
-            --light-text: #f5f5f5;
-            --soft-gold: rgba(201, 166, 107, 0.7);
+            --primary-blue: #0a1a2f;
+            --secondary-blue: #1a3a6e;
+            --gold: #d4af37;
+            --text-light: #f5f5f5;
+            --text-gray: #cccccc;
         }
         
         body {
-            background-color: var(--dark-blue);
-            color: var(--light-text);
-            font-family: 'Poppins', 'Tajawal', sans-serif;
-            font-weight: 300;
-            line-height: 1.6;
+            font-family: 'Tajawal', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--text-light);
             margin: 0;
             padding: 20px;
-            background-image: radial-gradient(circle at 10% 20%, rgba(10, 26, 47, 0.9) 0%, rgba(18, 42, 74, 0.9) 90%);
+            line-height: 1.6;
         }
         
         .menu-container {
             max-width: 800px;
             margin: 30px auto;
-            background-color: var(--navy);
+            background: rgba(10, 26, 47, 0.7);
             padding: 40px;
-            border-radius: 12px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(201, 166, 107, 0.1);
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         .logo {
-            max-width: 120px;
+            text-align: center;
             margin-bottom: 20px;
+        }
+        
+        .logo img {
+            max-width: 150px;
             filter: brightness(0) invert(1);
         }
         
         h1, h2 {
             font-family: 'Playfair Display', serif;
-            color: white;
-            font-weight: 400;
-            letter-spacing: 0.5px;
+            text-align: center;
+            color: var(--text-light);
         }
         
         h1 {
             font-size: 2.2rem;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             background: linear-gradient(to right, var(--gold), #f5f5f5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -65,152 +59,280 @@
         
         h2 {
             font-size: 1.5rem;
-            margin: 30px 0 15px;
+            border-bottom: 2px solid var(--gold);
             padding-bottom: 8px;
-            border-bottom: 1px solid var(--soft-gold);
+            margin: 30px 0 15px;
             display: inline-block;
         }
         
+        .signature-blend {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            text-align: center;
+            margin: 20px 0;
+            font-style: italic;
+            padding: 15px;
+            background: rgba(26, 58, 110, 0.5);
+            border-radius: 8px;
+            border-left: 3px solid var(--gold);
+        }
+        
         .menu-section {
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
         
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        li {
-            padding: 8px 0;
+        .menu-item {
             display: flex;
             justify-content: space-between;
-            position: relative;
-            transition: all 0.3s ease;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
         }
         
-        li:before {
-            content: "•";
-            color: var(--gold);
+        .item-name {
+            flex: 1;
+        }
+        
+        .item-name-english {
+            font-size: 0.85em;
+            color: var(--text-gray);
             margin-right: 10px;
-        }
-        
-        li:hover {
-            transform: translateX(5px);
         }
         
         .price {
             color: var(--gold);
-            font-weight: 600;
+            font-weight: bold;
+            min-width: 60px;
+            text-align: left;
         }
         
-        .signature-blend {
-            font-style: italic;
-            color: rgba(245, 245, 245, 0.8);
-            margin: 20px 0;
-            line-height: 1.7;
-            padding: 15px;
-            background: rgba(10, 26, 47, 0.5);
-            border-left: 3px solid var(--gold);
-            border-radius: 0 8px 8px 0;
+        .origin-list {
+            list-style-type: none;
+            padding-right: 20px;
         }
         
-        footer {
+        .origin-list li {
+            position: relative;
+            padding-right: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .origin-list li:before {
+            content: "•";
+            color: var(--gold);
+            position: absolute;
+            right: 0;
+        }
+        
+        .footer {
             text-align: center;
             margin-top: 40px;
+            font-style: italic;
+            color: var(--gold);
             padding-top: 20px;
-            border-top: 1px solid rgba(201, 166, 107, 0.2);
-            font-size: 0.9rem;
-            color: rgba(245, 245, 245, 0.7);
-        }
-        
-        .rtl {
-            direction: rtl;
-            text-align: right;
-            font-family: 'Tajawal', sans-serif;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         @media (max-width: 768px) {
             .menu-container {
-                padding: 25px;
+                padding: 20px;
             }
             
             h1 {
                 font-size: 1.8rem;
             }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&family=Playfair+Display:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="menu-container">
-        <header>
-            <img src="logo.png" alt="Dhows Coffee Logo" class="logo">
-            <h1>Dhows Specialty Coffee & Roasteries</h1>
-            <h2>مراكب القهوة - محامص وقهوة مختصة</h2>
-        </header>
-
+        <div class="logo">
+            <img src="logo.png" alt="Dhows Coffee Logo - شعار مراكب القهوة">
+        </div>
+        
+        <h1>☕ Dhows Specialty Coffee & Roasteries</h1>
+        <h2>مراكب القهوة - محامص وقهوة مختصة</h2>
+        
         <!-- ESPRESSO BAR -->
         <div class="menu-section">
             <h2>ESPRESSO BAR | الإسبريسو</h2>
             <p class="signature-blend">
-                Our signature blend: A specialty coffee fusion of deep classic notes with bright fruity accents<br>
-                بلندنا الخاص: مزيج من قهوة مختصة يجمع بين النوتات الكلاسيكية العميقة واللمسات الفاكهية الطازجة
+                بلندنا الحصري: مزيج معّد بعناية من أفضل المحاصيل، يقدم توازناً مثالياً بين النوتات الكلاسيكية العميقة واللمسات الفاكهية النابضة<br>
+                Our signature blend: Carefully crafted from premium crops, delivering perfect balance between deep classic notes and vibrant fruity hints
             </p>
-            <ul>
-                <li>Espresso / إسبريسو - <span class="price">15 SAR</span></li>
-                <li>Specialty Espresso / إسبريسو محاصيل حصرية - <span class="price">18 SAR</span></li>
-                <li>Americano / أمريكانو - <span class="price">12 SAR</span></li>
-                <li>Macchiato / ماكياتو - <span class="price">14 SAR</span></li>
-                <li>Cortado / كورتادو - <span class="price">16 SAR</span></li>
-            </ul>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    إسبريسو
+                    <div class="item-name-english">Espresso</div>
+                </div>
+                <div class="price">1.5 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    إسبريسو محاصيل حصرية
+                    <div class="item-name-english">Exclusive Crop Espresso <span style="font-style:italic; color:var(--text-gray)">(Seasonal rotation)</span></div>
+                </div>
+                <div class="price">1.8 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    أمريكانو
+                    <div class="item-name-english">Americano</div>
+                </div>
+                <div class="price">1.2 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    ماكياتو
+                    <div class="item-name-english">Macchiato</div>
+                </div>
+                <div class="price">1.4 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    كورتادو
+                    <div class="item-name-english">Cortado</div>
+                </div>
+                <div class="price">1.6 OMR</div>
+            </div>
         </div>
-
+        
         <!-- MILKY BASE -->
         <div class="menu-section">
             <h2>MILKY BASE | مشروبات بالحليب</h2>
-            <ul>
-                <li>Cappuccino / كابتشينو - <span class="price">16 SAR</span></li>
-                <li>Flat White / فلات وايت - <span class="price">17 SAR</span></li>
-                <li>Latte / لاتيه - <span class="price">16 SAR</span></li>
-                <li>Mocha / موكا - <span class="price">18 SAR</span></li>
-                <li>Spanish Latte / سبانيش لاتيه - <span class="price">19 SAR</span></li>
-            </ul>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    كابتشينو
+                    <div class="item-name-english">Cappuccino</div>
+                </div>
+                <div class="price">1.6 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    فلات وايت
+                    <div class="item-name-english">Flat White</div>
+                </div>
+                <div class="price">1.7 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    لاتيه
+                    <div class="item-name-english">Latte</div>
+                </div>
+                <div class="price">1.6 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    موكا
+                    <div class="item-name-english">Mocha</div>
+                </div>
+                <div class="price">1.8 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    سبانيش لاتيه
+                    <div class="item-name-english">Spanish Latte</div>
+                </div>
+                <div class="price">1.9 OMR</div>
+            </div>
         </div>
-
+        
         <!-- ICED SPECIALTIES -->
         <div class="menu-section">
             <h2>ICED SPECIALTIES | مشروبات باردة</h2>
-            <ul>
-                <li>Iced Americano / أمريكانو بارد - <span class="price">14 SAR</span></li>
-                <li>Iced Spanish Latte / سبانيش لاتيه بارد - <span class="price">20 SAR</span></li>
-                <li>Cold Brew / كولد برو - <span class="price">18 SAR</span></li>
-            </ul>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    أمريكانو بارد
+                    <div class="item-name-english">Iced Americano</div>
+                </div>
+                <div class="price">1.4 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    سبانيش لاتيه بارد
+                    <div class="item-name-english">Iced Spanish Latte</div>
+                </div>
+                <div class="price">2.0 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    كولد برو
+                    <div class="item-name-english">Cold Brew</div>
+                </div>
+                <div class="price">1.8 OMR</div>
+            </div>
         </div>
-
+        
         <!-- FILTER BREW -->
         <div class="menu-section">
             <h2>FILTER BREW | القهوة المقطرة</h2>
-            <ul>
-                <li>V60 - <span class="price">18 SAR</span></li>
-                <li>Kalita Wave - <span class="price">20 SAR</span></li>
-                <li>Aeropress - <span class="price">16 SAR</span></li>
-                <li>Chemex - <span class="price">22 SAR</span></li>
+            <p style="text-align: center; font-style: italic; color: var(--text-gray);">
+                (اختر أداتك: في60 - كليتا - كيمكس - ايروبرس)<br>
+                (Choose your tool: V60 - Kalita - Chemex - Aeropress)
+            </p>
+        </div>
+        
+        <!-- SPECIALTY COFFEE BEANS -->
+        <div class="menu-section">
+            <h2>SPECIALTY COFFEE BEANS | حبوب القهوة المختصة</h2>
+            
+            <ul class="origin-list">
+                <li>محاصيل أحادية المنشأ (يمن - بنما - إثيوبيا - كولومبيا واخرى)</li>
+                <li><li>
+                <li>دفعات موسمية حصرية (محاصيل محدودة الإنتاج))
+                <li><li>
             </ul>
         </div>
-
+        
         <!-- EXTRAS -->
-        <div class="menu-section rtl">
-            <h2>إضافات | EXTRAS</h2>
-            <ul>
-                <li>بدائل الحليب: شوفان / لوز / جوز الهند</li>
-                <li>نكهات: فانيلا / كراميل / بندق - <span class="price">3 SAR</span></li>
-                <li>شوت إضافي / Extra Shot - <span class="price">4 SAR</span></li>
-            </ul>
+        <div class="menu-section">
+            <h2>EXTRAS | إضافات</h2>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    بدائل الحليب: شوفان / لوز / جوز الهند
+                    <div class="item-name-english">Non-Dairy Milk: Oat / Almond / Coconut</div>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    نكهات: فانيلا / كراميل / بندق
+                    <div class="item-name-english">Flavors: Vanilla / Caramel / Hazelnut</div>
+                </div>
+                <div class="price">0.3 OMR</div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    إضافة شوت
+                    <div class="item-name-english">Extra Shot</div>
+                </div>
+                <div class="price">0.4 OMR</div>
+            </div>
         </div>
-
-        <footer>
-            <p>Why Dhows? نقدم لكم خبرة قهوة استثنائية من الحبة إلى الكوب</p>
-            <p><i class="fas fa-map-marker-alt"></i> Location | <i class="fas fa-phone"></i> Contact | <i class="fas fa-clock"></i> 8AM-11PM</p>
-        </footer>
+        
+        <div class="footer">
+            <p>لماذا نختلف؟ نقدم تجربة قهوة استثنائية من الحبة إلى الكوب، باستخدام أفضل المحاصيل العالمية المحمصة محلياً</p>
+            <p>Why Dhows? We offer exceptional coffee experiences from bean to cup, using premium globally-sourced, locally-roasted crops</p>
+        </div>
     </div>
 </body>
 </html>
