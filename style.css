@@ -1,0 +1,29 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f5f0;
+    color: #3e2723;
+    margin: 0;
+    padding: 20px;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #5d4037;
+}
+
+/* Add more styling as needed */
