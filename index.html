@@ -1,21 +1,216 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhows Coffee Menu</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Dhows Specialty Coffee Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #0a1a2f;
+            --navy: #122a4a;
+            --gold: #c9a66b;
+            --light-text: #f5f5f5;
+            --soft-gold: rgba(201, 166, 107, 0.7);
+        }
+        
+        body {
+            background-color: var(--dark-blue);
+            color: var(--light-text);
+            font-family: 'Poppins', 'Tajawal', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(10, 26, 47, 0.9) 0%, rgba(18, 42, 74, 0.9) 90%);
+        }
+        
+        .menu-container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: var(--navy);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 166, 107, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .logo {
+            max-width: 120px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+        
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, var(--gold), #f5f5f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--soft-gold);
+            display: inline-block;
+        }
+        
+        .menu-section {
+            margin-bottom: 35px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--gold);
+            margin-right: 10px;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+        }
+        
+        .price {
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        .signature-blend {
+            font-style: italic;
+            color: rgba(245, 245, 245, 0.8);
+            margin: 20px 0;
+            line-height: 1.7;
+            padding: 15px;
+            background: rgba(10, 26, 47, 0.5);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(201, 166, 107, 0.2);
+            font-size: 0.9rem;
+            color: rgba(245, 245, 245, 0.7);
+        }
+        
+        .rtl {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="menu-container">
         <header>
             <img src="logo.png" alt="Dhows Coffee Logo" class="logo">
-            <h1>☕ Dhows Specialty Coffee & Roasteries</h1>
+            <h1>Dhows Specialty Coffee & Roasteries</h1>
+            <h2>مراكب القهوة - محامص وقهوة مختصة</h2>
         </header>
 
-        <!-- PASTE YOUR MENU SECTIONS HERE -->
-        
+        <!-- ESPRESSO BAR -->
+        <div class="menu-section">
+            <h2>ESPRESSO BAR | الإسبريسو</h2>
+            <p class="signature-blend">
+                Our signature blend: A specialty coffee fusion of deep classic notes with bright fruity accents<br>
+                بلندنا الخاص: مزيج من قهوة مختصة يجمع بين النوتات الكلاسيكية العميقة واللمسات الفاكهية الطازجة
+            </p>
+            <ul>
+                <li>Espresso / إسبريسو - <span class="price">15 SAR</span></li>
+                <li>Specialty Espresso / إسبريسو محاصيل حصرية - <span class="price">18 SAR</span></li>
+                <li>Americano / أمريكانو - <span class="price">12 SAR</span></li>
+                <li>Macchiato / ماكياتو - <span class="price">14 SAR</span></li>
+                <li>Cortado / كورتادو - <span class="price">16 SAR</span></li>
+            </ul>
+        </div>
+
+        <!-- MILKY BASE -->
+        <div class="menu-section">
+            <h2>MILKY BASE | مشروبات بالحليب</h2>
+            <ul>
+                <li>Cappuccino / كابتشينو - <span class="price">16 SAR</span></li>
+                <li>Flat White / فلات وايت - <span class="price">17 SAR</span></li>
+                <li>Latte / لاتيه - <span class="price">16 SAR</span></li>
+                <li>Mocha / موكا - <span class="price">18 SAR</span></li>
+                <li>Spanish Latte / سبانيش لاتيه - <span class="price">19 SAR</span></li>
+            </ul>
+        </div>
+
+        <!-- ICED SPECIALTIES -->
+        <div class="menu-section">
+            <h2>ICED SPECIALTIES | مشروبات باردة</h2>
+            <ul>
+                <li>Iced Americano / أمريكانو بارد - <span class="price">14 SAR</span></li>
+                <li>Iced Spanish Latte / سبانيش لاتيه بارد - <span class="price">20 SAR</span></li>
+                <li>Cold Brew / كولد برو - <span class="price">18 SAR</span></li>
+            </ul>
+        </div>
+
+        <!-- FILTER BREW -->
+        <div class="menu-section">
+            <h2>FILTER BREW | القهوة المقطرة</h2>
+            <ul>
+                <li>V60 - <span class="price">18 SAR</span></li>
+                <li>Kalita Wave - <span class="price">20 SAR</span></li>
+                <li>Aeropress - <span class="price">16 SAR</span></li>
+                <li>Chemex - <span class="price">22 SAR</span></li>
+            </ul>
+        </div>
+
+        <!-- EXTRAS -->
+        <div class="menu-section rtl">
+            <h2>إضافات | EXTRAS</h2>
+            <ul>
+                <li>بدائل الحليب: شوفان / لوز / جوز الهند</li>
+                <li>نكهات: فانيلا / كراميل / بندق - <span class="price">3 SAR</span></li>
+                <li>شوت إضافي / Extra Shot - <span class="price">4 SAR</span></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>Why Dhows? نقدم لكم خبرة قهوة استثنائية من الحبة إلى الكوب</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location | <i class="fas fa-phone"></i> Contact | <i class="fas fa-clock"></i> 8AM-11PM</p>
+        </footer>
     </div>
 </body>
 </html>
